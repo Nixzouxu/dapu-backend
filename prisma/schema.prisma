@@ -1,0 +1,135 @@
+// Skema database backend DAPU Aceh Publishing (MariaDB 10.5 / MySQL).
+// Alamat database dibaca dari prisma7.config.ts (DATABASE_URL), bukan dari file ini.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+enum BriefStatus {
+  Baru
+  Ditinjau
+  MenungguInformasi  @map("Menunggu Informasi")
+  PenawaranDikirim   @map("Penawaran Dikirim")
+  Disetujui
+  MenungguPembayaran @map("Menunggu Pembayaran")
+  DalamPengerjaan    @map("Dalam Pengerjaan")
+  Selesai
+  Ditolak
+}
+
+enum PortfolioCategory {
+  terbitan
+  proyekJasa @map("proyek-jasa")
+}
+
+model Admin {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  name         String
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
+
+model ConsultationBrief {
+  id        Int         @id @default(autoincrement())
+  reference String      @unique
+  name      String
+  email     String
+  phone     String
+  service   String
+  title     String
+  volume    String
+  stage     String
+  output    String
+  deadline  DateTime?   @db.Date
+  notes     String?     @db.Text
+  status    BriefStatus @default(Baru)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}
+
+model ContactMessage {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String   @db.Text
+  createdAt DateTime @default(now())
+}
+
+model PortfolioItem {
+  id          Int               @id @default(autoincrement())
+  title       String
+  category    PortfolioCategory
+  year        Int
+  description String            @db.Text
+  imageUrl    String?
+  url         String?
+}
+
+model Journal {
+  id            Int     @id @default(autoincrement())
+  title         String
+  issn          String?
+  publishedYear Int
+  description   String  @db.Text
+  url           String?
+}
+
+model Article {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  title       String
+  excerpt     String   @db.Text
+  category    String
+  readTime    String
+  author      String
+  publishedAt DateTime @db.Date
+  // Isi artikel berupa JSON (array {heading, paragraphs}) disimpan sebagai teks panjang.
+  sections    String   @db.LongText
+}
+
+model Invoice {
+  id            Int           @id @default(autoincrement())
+  invoiceNumber String        @unique
+  clientName    String
+  clientAddress String        @db.Text
+  clientEmail   String
+  notes         String?       @db.Text
+  dueDate       DateTime      @db.Date
+  total         Int
+  createdAt     DateTime      @default(now())
+  items         InvoiceItem[]
+}
+
+model InvoiceItem {
+  id                 Int     @id @default(autoincrement())
+  invoiceId          Int
+  invoice            Invoice @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  serviceDescription String
+  quantity           Int
+  unitPrice          Int
+}
+
+model InvoiceSetting {
+  id                Int     @id @default(1)
+  companyName       String
+  companyAddress    String  @db.Text
+  bankAccountName   String
+  bankAccountNumber String
+  bankName          String
+  footerNote        String? @db.Text
+  logoUrl           String?
+}
+
+// Penghitung untuk nomor referensi brief dan nomor invoice yang dibuat atomik di server.
+model Counter {
+  name  String @id
+  value Int    @default(0)
+}
