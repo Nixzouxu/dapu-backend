@@ -1,4 +1,5 @@
 ﻿import PDFDocument from "pdfkit";
+import { readImageInfo } from "./logo";
 
 type PdfInvoice = {
   invoiceNumber: string;
@@ -28,8 +29,8 @@ const fmtDate = (value: string, timeZone: string) =>
     new Date(value.length === 10 ? `${value}T00:00:00Z` : value),
   );
 
-// Membuat PDF invoice A4 dan mengembalikannya sebagai Buffer.
-export function buildInvoicePdf(inv: PdfInvoice, s: PdfSettings): Promise<Buffer> {
+// Membuat PDF invoice A4 dan mengembalikannya sebagai Buffer. Logo (PNG atau JPEG) boleh kosong.
+export function buildInvoicePdf(inv: PdfInvoice, s: PdfSettings, logo: Buffer | null = null): Promise<Buffer> {
   return new Promise((resolve, reject) => {
     const doc = new PDFDocument({
       size: "A4",
@@ -55,10 +56,31 @@ export function buildInvoicePdf(inv: PdfInvoice, s: PdfSettings): Promise<Buffer
       }
     };
 
+    // Logo (kalau ada) di kiri, teks perusahaan di sebelahnya. Logo bermasalah diabaikan.
+    let textX = left;
+    let textW = 290;
+    let logoBottom = y;
+    if (logo) {
+      try {
+        const img = readImageInfo(logo);
+        if (!img) throw new Error("logo tidak terbaca");
+        const box = 56;
+        const scale = Math.min(box / img.width, box / img.height, 1);
+        const w = img.width * scale;
+        const h = img.height * scale;
+        doc.image(logo, left, y, { width: w, height: h });
+        textX = left + w + 12;
+        textW = 290 - w - 12;
+        logoBottom = y + h;
+      } catch {
+        // invoice tetap dibuat tanpa logo
+      }
+    }
+
     // Kop: perusahaan di kiri, judul dan nomor di kanan.
-    doc.font("Helvetica-Bold").fontSize(16).fillColor(ink).text(s.companyName, left, y, { width: 290 });
-    doc.font("Helvetica").fontSize(9).fillColor(muted).text(s.companyAddress, left, doc.y + 2, { width: 290 });
-    const leftBottom = doc.y;
+    doc.font("Helvetica-Bold").fontSize(16).fillColor(ink).text(s.companyName, textX, y, { width: textW });
+    doc.font("Helvetica").fontSize(9).fillColor(muted).text(s.companyAddress, textX, doc.y + 2, { width: textW });
+    const leftBottom = Math.max(doc.y, logoBottom);
 
     doc.font("Helvetica-Bold").fontSize(22).fillColor(ink).text("INVOICE", 350, y, { width: 195, align: "right" });
     doc.font("Helvetica").fontSize(9).fillColor(muted);
@@ -149,3 +171,4 @@ export function buildInvoicePdf(inv: PdfInvoice, s: PdfSettings): Promise<Buffer
     doc.end();
   });
 }
+

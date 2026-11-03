@@ -133,3 +133,12 @@ model Counter {
   name  String @id
   value Int    @default(0)
 }
+
+// Logo perusahaan untuk invoice. Satu baris saja (id = 1), disimpan sebagai data biner.
+model InvoiceLogo {
+  id        Int      @id @default(1)
+  mimeType  String
+  data      Bytes    @db.LongBlob
+  size      Int
+  updatedAt DateTime @updatedAt
+}

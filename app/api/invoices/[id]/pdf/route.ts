@@ -13,14 +13,19 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
     const { id } = await params;
     if (!/^\d{1,9}$/.test(id)) throw new HttpError(404, "Invoice tidak ditemukan");
 
-    const [invoice, settings] = await Promise.all([
+    const [invoice, settings, logo] = await Promise.all([
       prisma.invoice.findUnique({ where: { id: Number(id) }, include: { items: true } }),
       prisma.invoiceSetting.findUnique({ where: { id: 1 } }),
+      prisma.invoiceLogo.findUnique({ where: { id: 1 } }),
     ]);
     if (!invoice) throw new HttpError(404, "Invoice tidak ditemukan");
     if (!settings) throw new HttpError(422, "Pengaturan invoice belum diisi");
 
-    const pdf = await buildInvoicePdf(serializeInvoice(invoice), serializeSettings(settings));
+    const pdf = await buildInvoicePdf(
+      serializeInvoice(invoice),
+      serializeSettings(settings),
+      logo ? Buffer.from(logo.data) : null,
+    );
     return new Response(new Uint8Array(pdf), {
       headers: {
         "Content-Type": "application/pdf",
