@@ -1,8 +1,8 @@
 ﻿import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // pdfkit membaca file font dari node_modules saat dijalankan, jadi tidak boleh digabung ke bundel.
-  serverExternalPackages: ["pdfkit"],
+  // Paket ini membaca file atau modul sistem saat dijalankan, jadi tidak digabung ke bundel.
+  serverExternalPackages: ["pdfkit", "nodemailer"],
 };
 
 export default nextConfig;
