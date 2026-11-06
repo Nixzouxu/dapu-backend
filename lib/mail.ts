@@ -92,3 +92,38 @@ export async function sendInvoiceEmail(inv: MailInvoice, s: MailSettings, pdf: B
     transporter.close();
   }
 }
+
+// Notifikasi untuk pemilik situs (Pak Hendra). Tidak pernah melempar error: datanya sudah tersimpan.
+export async function sendNotificationEmail(opts: { subject: string; text: string; replyTo?: string }) {
+  const to = process.env.NOTIFY_EMAIL;
+  if (!to) {
+    console.warn("NOTIFY_EMAIL belum diisi, notifikasi dilewati");
+    return;
+  }
+  try {
+    const cfg = mailConfig();
+    const transporter = nodemailer.createTransport({
+      host: cfg.host,
+      port: cfg.port,
+      secure: cfg.secure,
+      auth: cfg.user && cfg.pass ? { user: cfg.user, pass: cfg.pass } : undefined,
+      connectionTimeout: 10_000,
+      greetingTimeout: 10_000,
+      socketTimeout: 30_000,
+    });
+    try {
+      await transporter.sendMail({
+        from: cfg.from,
+        to,
+        replyTo: opts.replyTo,
+        subject: opts.subject,
+        text: opts.text,
+      });
+    } finally {
+      transporter.close();
+    }
+  } catch (err) {
+    const e = err as { code?: string; responseCode?: number; message?: string };
+    console.error("Gagal mengirim notifikasi:", e.code, e.responseCode, e.message);
+  }
+}
