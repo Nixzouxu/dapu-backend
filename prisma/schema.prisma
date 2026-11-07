@@ -88,7 +88,7 @@ model Article {
   title       String
   excerpt     String   @db.Text
   category    String
-  readTime    String
+  readTime    Int
   author      String
   publishedAt DateTime @db.Date
   // Isi artikel berupa JSON (array {heading, paragraphs}) disimpan sebagai teks panjang.
