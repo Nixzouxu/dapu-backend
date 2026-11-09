@@ -10,7 +10,8 @@
     "db:generate": "prisma generate --no-hints",
     "db:migrate": "prisma migrate deploy",
     "db:seed": "tsx scripts/seed-content.ts",
-    "admin:create": "tsx scripts/create-admin.ts"
+    "admin:create": "tsx scripts/create-admin.ts",
+    "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
     "@prisma/adapter-mariadb": "^7.10.1",
