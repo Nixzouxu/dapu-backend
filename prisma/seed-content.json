@@ -1,0 +1,221 @@
+{
+  "portfolio": [
+    {
+      "id": "1",
+      "title": "Metodologi Penelitian Kesehatan Masyarakat: Pendekatan Praktis",
+      "category": "terbitan",
+      "year": "2025",
+      "description": "Buku panduan metodologi penelitian di bidang kesehatan masyarakat dengan pendekatan praktis, ditujukan bagi peneliti dan mahasiswa."
+    },
+    {
+      "id": "2",
+      "title": "Gizi dan Tumbuh Kembang Anak: Panduan untuk Tenaga Kesehatan",
+      "category": "terbitan",
+      "year": "2025",
+      "description": "Buku panduan gizi dan tumbuh kembang anak untuk tenaga kesehatan, membahas kebutuhan nutrisi di tiap tahap perkembangan."
+    },
+    {
+      "id": "3",
+      "title": "Nutrition and Health Insights — Edisi Vol. 2 No. 2",
+      "category": "terbitan",
+      "year": "2025",
+      "description": "Edisi terbaru jurnal ilmiah Nutrition and Health Insights (Vol. 2 No. 2, 2025) — telah terbit 4 edisi sejak 2024, memuat kumpulan penelitian gizi dan kesehatan masyarakat.",
+      "url": "https://journal.dapupublishing.com/NaHI/index"
+    },
+    {
+      "id": "4",
+      "title": "Penyusunan Naskah Akademik — Disertasi Ilmu Gizi",
+      "category": "proyek-jasa",
+      "year": "2025",
+      "description": "Kerja sama penyusunan naskah akademik disertasi untuk klien institusi pendidikan di bidang ilmu gizi."
+    },
+    {
+      "id": "5",
+      "title": "Editing & Proofreading Manuskrip Jurnal Internasional",
+      "category": "proyek-jasa",
+      "year": "2025",
+      "description": "Layanan editing dan proofreading manuskrip untuk klien peneliti independen menuju publikasi jurnal internasional."
+    },
+    {
+      "id": "6",
+      "title": "Desain Sampul & Tata Letak Buku Ajar Keperawatan",
+      "category": "proyek-jasa",
+      "year": "2024",
+      "description": "Desain sampul dan tata letak buku ajar keperawatan untuk klien penerbit mitra."
+    }
+  ],
+  "journals": [
+    {
+      "id": "nahi",
+      "title": "Nutrition and Health Insights (NaHI)",
+      "issn": "2721-0000",
+      "publishedYear": "2024",
+      "description": "Jurnal ilmiah yang mengeksplorasi warisan budaya, sejarah, dan identitas Nusantara dengan pendekatan multidisiplin.",
+      "url": "https://journal.dapupublishing.com/NaHI/index"
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "slug": "menyiapkan-berkas-siap-cetak",
+      "title": "Menyiapkan Berkas Siap Cetak: Ukuran, Bahan, dan Finishing",
+      "excerpt": "Hal-hal yang perlu ditentukan sebelum naskah masuk produksi cetak agar hasilnya rapi, sesuai anggaran, dan tepat waktu.",
+      "category": "Percetakan",
+      "readTime": 6,
+      "author": "Tim DAPU Publishing",
+      "publishedAt": "2026-09-10",
+      "sections": [
+        {
+          "heading": "Tentukan spesifikasi sejak awal",
+          "paragraphs": [
+            "Ukuran buku, jenis kertas, jumlah halaman, dan jumlah eksemplar saling memengaruhi biaya dan waktu produksi. Menentukannya lebih awal membantu proses tata letak dan pemeriksaan berkas berjalan lebih lancar."
+          ]
+        },
+        {
+          "heading": "Siapkan berkas dengan benar",
+          "paragraphs": [
+            "Pastikan font tertanam, margin aman terhadap area potong dan jilid, serta gambar memiliki resolusi yang cukup. Berkas yang sudah diperiksa mengurangi risiko revisi di tahap cetak."
+          ]
+        },
+        {
+          "heading": "Periksa proof sebelum cetak akhir",
+          "paragraphs": [
+            "Hasil proof memberi gambaran nyata tentang warna, tata letak, dan potongan sebelum produksi penuh dimulai. Luangkan waktu memeriksanya dengan teliti, karena perubahan setelah cetak massal jauh lebih sulit dilakukan."
+          ]
+        },
+        {
+          "heading": "Pilih finishing sesuai penggunaan",
+          "paragraphs": [
+            "Jenis penjilidan dan pelapisan sampul sebaiknya mengikuti cara bahan cetak akan digunakan. Misalnya, buku ajar yang sering dibuka membutuhkan jilidan yang kuat."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "slug": "editing-proofreading-penerjemahan",
+      "title": "Editing, Proofreading, dan Penerjemahan: Apa Bedanya?",
+      "excerpt": "Memahami perbedaan ketiga layanan bahasa ini membantu Anda memilih yang paling tepat untuk kondisi naskah Anda.",
+      "category": "Terjemahan & Proofreading",
+      "readTime": 7,
+      "author": "Tim DAPU Publishing",
+      "publishedAt": "2026-09-08",
+      "sections": [
+        {
+          "heading": "Editing",
+          "paragraphs": [
+            "Editing memperbaiki struktur, kejelasan, konsistensi, dan gaya bahasa naskah. Fokusnya adalah membuat gagasan penulis tersampaikan dengan runtut dan mudah dipahami pembaca."
+          ]
+        },
+        {
+          "heading": "Proofreading",
+          "paragraphs": [
+            "Proofreading adalah pemeriksaan akhir terhadap ejaan, tanda baca, dan salah ketik, biasanya dilakukan setelah tata letak selesai dan sebelum naskah naik cetak atau terbit."
+          ]
+        },
+        {
+          "heading": "Penerjemahan",
+          "paragraphs": [
+            "Penerjemahan mengalihkan isi naskah ke bahasa lain dengan tetap menjaga maksud dan ketepatan istilah, misalnya untuk menjangkau pembaca atau jurnal internasional."
+          ]
+        },
+        {
+          "heading": "Mana yang Anda butuhkan?",
+          "paragraphs": [
+            "Naskah yang masih mentah umumnya memerlukan editing lebih dulu. Naskah yang hampir final cukup melalui proofreading. Dalam banyak proyek, ketiganya dijalankan berurutan."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "slug": "menyiapkan-artikel-ilmiah",
+      "title": "Menyiapkan Artikel Ilmiah agar Siap Diajukan",
+      "excerpt": "Panduan memeriksa struktur, template jurnal, tabel, dan referensi sebelum artikel dikirim ke jurnal tujuan.",
+      "category": "Jasa Artikel Ilmiah",
+      "readTime": 6,
+      "author": "Tim DAPU Publishing",
+      "publishedAt": "2026-10-17",
+      "sections": [
+        {
+          "heading": "Mulai dari pedoman jurnal",
+          "paragraphs": [
+            "Periksa fokus jurnal, template, batas kata, format abstrak, dan gaya sitasi sebelum menyiapkan naskah. Pedoman ini membantu penulis mengetahui persyaratan teknis sejak awal."
+          ]
+        },
+        {
+          "heading": "Periksa struktur dan konsistensi",
+          "paragraphs": [
+            "Pastikan tujuan, metode, hasil, dan pembahasan tersusun runtut. Periksa pula istilah, tabel, gambar, dan sitasi agar konsisten di seluruh naskah."
+          ]
+        },
+        {
+          "heading": "Jaga kepengarangan",
+          "paragraphs": [
+            "Penulis tetap bertanggung jawab atas data, gagasan, analisis, dan kesimpulan. Pendampingan editorial membantu memperjelas penyajian tanpa mengambil alih kepengarangan."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "slug": "mengenal-proses-penerbitan-ilmiah",
+      "title": "Dari Naskah hingga Terbit: Mengenal Proses Penerbitan",
+      "excerpt": "Kenali tahapan evaluasi naskah, penyuntingan, tata letak, desain sampul, hingga produksi publikasi.",
+      "category": "Penerbitan Ilmiah",
+      "readTime": 5,
+      "author": "Tim DAPU Publishing",
+      "publishedAt": "2026-10-17",
+      "sections": [
+        {
+          "heading": "Evaluasi dan penyuntingan naskah",
+          "paragraphs": [
+            "Proses dimulai dengan meninjau kesiapan naskah dan kebutuhan penerbitannya. Penyuntingan kemudian membantu menjaga kejelasan, konsistensi, dan keterbacaan isi."
+          ]
+        },
+        {
+          "heading": "Tata letak dan pemeriksaan akhir",
+          "paragraphs": [
+            "Naskah yang sudah disunting ditata sesuai format publikasi. Penulis atau tim terkait memeriksa proof untuk memastikan teks, tabel, gambar, dan informasi penerbitan sudah benar."
+          ]
+        },
+        {
+          "heading": "Produksi cetak atau digital",
+          "paragraphs": [
+            "Setelah persetujuan akhir, publikasi disiapkan untuk format cetak, digital, atau keduanya sesuai kebutuhan pembaca dan rencana distribusi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "slug": "menyiapkan-data-untuk-analisis",
+      "title": "Sebelum Analisis Data: Apa Saja yang Perlu Disiapkan?",
+      "excerpt": "Data yang rapi, instrumen yang jelas, dan pertanyaan penelitian membantu analisis berjalan lebih terarah.",
+      "category": "Analisis Data",
+      "readTime": 5,
+      "author": "Tim DAPU Publishing",
+      "publishedAt": "2026-10-17",
+      "sections": [
+        {
+          "heading": "Tentukan pertanyaan penelitian",
+          "paragraphs": [
+            "Rumuskan tujuan dan pertanyaan penelitian sebelum memilih metode. Jenis data dan pertanyaan yang ingin dijawab akan membantu menentukan analisis yang sesuai."
+          ]
+        },
+        {
+          "heading": "Rapikan data dan dokumentasinya",
+          "paragraphs": [
+            "Siapkan data mentah, keterangan setiap variabel, instrumen, dan aturan pengkodean. Periksa data kosong, nilai ganda, serta format yang tidak konsisten."
+          ]
+        },
+        {
+          "heading": "Tafsirkan hasil sesuai batasannya",
+          "paragraphs": [
+            "Hasil analisis perlu dibaca sesuai metode, kualitas data, dan konteks penelitian. Sajikan kesimpulan dengan jelas tanpa melebihi dukungan bukti yang tersedia."
+          ]
+        }
+      ]
+    }
+  ]
+}

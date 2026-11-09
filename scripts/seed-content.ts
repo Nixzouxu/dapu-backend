@@ -1,4 +1,4 @@
-﻿import "dotenv/config";
+import "dotenv/config";
 import { readFileSync } from "node:fs";
 import { prisma } from "../lib/prisma";
 
@@ -25,7 +25,7 @@ const toYear = (value: string) => {
 };
 
 async function main() {
-  const file = process.env.SEED_FILE;
+  const file = process.env.SEED_FILE ?? "prisma/seed-content.json";
   if (!file) throw new Error("SEED_FILE wajib diisi");
   const seed = JSON.parse(readFileSync(file, "utf8")) as { portfolio: P[]; journals: J[]; articles: A[] };
 

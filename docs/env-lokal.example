@@ -1,0 +1,21 @@
+# Salin file ini menjadi .env di akar proyek, lalu isi SESSION_SECRET.
+DATABASE_URL="mysql://root:dapu_local_root@127.0.0.1:3307/dapu_dev"
+DATABASE_HOST="127.0.0.1"
+DATABASE_PORT="3307"
+DATABASE_USER="root"
+DATABASE_PASSWORD="dapu_local_root"
+DATABASE_NAME="dapu_dev"
+
+# Isi dengan 64 karakter acak (lihat langkah 2 di PANDUAN-LOKAL.md).
+SESSION_SECRET=
+
+# Alamat FE yang boleh memanggil API dengan cookie, dipisah koma.
+CORS_ORIGINS=http://localhost:3001
+PUBLIC_API_URL=http://localhost:3000
+
+# Semua email ditangkap Mailpit di http://localhost:8025 dan tidak dikirim keluar.
+SMTP_HOST=127.0.0.1
+SMTP_PORT=1025
+SMTP_SECURE=false
+MAIL_FROM="DAPU Dev <invoice@dapu.test>"
+NOTIFY_EMAIL="notifikasi@dapu.test"

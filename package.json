@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "prisma generate --no-hints && next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:generate": "prisma generate --no-hints",
+    "db:migrate": "prisma migrate deploy",
+    "db:seed": "tsx scripts/seed-content.ts",
+    "admin:create": "tsx scripts/create-admin.ts"
   },
   "dependencies": {
     "@prisma/adapter-mariadb": "^7.10.1",
